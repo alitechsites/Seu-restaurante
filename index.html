@@ -3,232 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Flame Burgers | O Sabor Inesquecível</title>
-    <meta name="description" content="Experimente o melhor hambúrguer artesanal da cidade. Site profissional desenvolvido pela AliTech.">
-
+    <title>Golden Flame | Hamburgueria Premium</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="loader">
         <div class="loader-content">
-            <i class="fas fa-fire fa-beat"></i>
-            <h2 class="loader-text">Golden Flame</h2>
+            <h2 class="loader-logo">Golden <span>Flame</span></h2>
+            <div class="loader-bar"></div>
         </div>
     </div>
 
-    <header id="main-header">
-        <nav class="container nav-container">
+    <header id="header">
+        <nav class="container">
             <a href="#" class="logo">Golden <span>Flame</span></a>
-            
-            <ul class="nav-links">
+            <ul class="nav-menu">
                 <li><a href="#home">Início</a></li>
-                <li><a href="#story">Nossa História</a></li>
                 <li><a href="#menu">Cardápio</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#locations">Unidades</a></li>
+                <li><a href="#about">Nossa Arte</a></li>
+                <li><a href="#contact">Contato</a></li>
             </ul>
-
-            <div class="nav-actions">
-                <div class="cart-trigger" onclick="toggleCart()">
-                    <i class="fas fa-shopping-bag"></i>
+            <div class="nav-icons">
+                <div class="cart-btn" onclick="toggleCart()">
+                    <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cart-count">0</span>
-                </div>
-                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars"></i>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="hero-bg-image"></div> <div class="overlay"></div>
-            <div class="container hero-content">
-                <span class="tagline">A ARTE DA HAMBURGUERIA ARTESANAL</span>
-                <h1>O sabor que você<br>nunca esquece.</h1>
-                <p>Cada mordida, uma experiência inesquecível. Feito com paixão, servido com excelência.</p>
-                <a href="#menu" class="btn btn-primary-gold">Ver Cardápio <i class="fas fa-chevron-right"></i></a>
-            </div>
-        </section>
-
-        <div class="image-divider" style="background-image: url('https://image.pollinations.ai/prompt/close%20up%20shot%20of%20a%20perfectly%20grilled%20burger%20patty%20on%20a%20flame%20grill,%20smoke%20and%20fire,%20bokeh%20background,%20hyperrealistic,%20professional%20food%20photography');" data-parallax="true"></div>
-
-        <section id="story" class="section story-section">
-            <div class="container story-grid">
-                <div class="story-image">
-                    <img src="https://image.pollinations.ai/prompt/elegant%20interior%20of%20a%20gourmet%20burger%20restaurant,%20dim%20golden%20lighting,%20comfortable%20seating,%20marble%20tables,%20luxurious%20atmosphere,%20wide%20shot,%20hyperrealistic" alt="Interior elegante da Golden Flame">
-                </div>
-                <div class="story-content">
-                    <h2 class="section-title">Nossa <span>História</span></h2>
-                    <p>No coração da Golden Flame, bate a paixão por criar não apenas hambúrgueres, mas momentos inesquecíveis. Desde nossa fundação em 2018, nos dedicamos a aprimorar cada detalhe, da escolha dos ingredientes mais frescos ao toque final na chapa.</p>
-                    <p>Somos artesãos do sabor, buscando a perfeição em cada blend de carne, em cada molho secreto e em cada pão que abraça nossa criação. Venha descobrir a experiência que nos torna únicos.</p>
-                    <a href="#locations" class="btn btn-secondary-outline">Visite-nos</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="image-divider" style="background-image: url('https://image.pollinations.ai/prompt/close%20up%20shot%20of%20molten%20cheddar%20cheese%20dripping%20over%20a%20hot%20burger%20patty,%20steaming,%20dark%20moody%20background,%20hyperrealistic%20food%20photography');" data-parallax="true"></div>
-
-        <section id="menu" class="section menu-section">
-            <div class="container">
-                <h2 class="section-title">Nosso <span>Cardápio</span></h2>
-                <p class="section-subtitle">Onde o sabor encontra a excelência.</p>
-                <div id="menu-grid" class="menu-grid">
-                    </div>
-            </div>
-        </section>
-
-        <div class="image-divider" style="background-image: url('https://image.pollinations.ai/prompt/delicious%20golden%20crispy%20french%20fries%20in%20a%20gourmet%20bowl%20with%20condiments%20on%20a%20dark%20wooden%20table,%20cinematic%20lighting,%20hyperrealistic');" data-parallax="true"></div>
-
-        <section id="gallery" class="section gallery-section">
-            <div class="container">
-                <h2 class="section-title">Nossa <span>Galeria</span></h2>
-                <p class="section-subtitle">Momentos e sabores que celebramos.</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-aos="fade-up">
-                        <img src="https://image.pollinations.ai/prompt/hyperrealistic%20photo%20of%20a%20gourmet%20burger%20with%20melted%20cheese%20and%20crispy%20bacon,%20dark%20background,%20studio%20lighting" alt="Burger Premium">
-                    </div>
-                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://image.pollinations.ai/prompt/ultra-realistic%20shot%20of%20a%20refreshing%20chocolate%20milkshake%20with%20whipped%20cream%20and%20chocolate%20shavings,%20dark%20background" alt="Milkshake Irresistível">
-                    </div>
-                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://image.pollinations.ai/prompt/professional%20food%20photography%20of%20gourmet%20french%20fries%20with%20rosemary%20and%20truffle%20oil,%20dark%20wooden%20table" alt="Batatas Trufadas">
-                    </div>
-                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://image.pollinations.ai/prompt/closeup%20of%20a%20chef%20flipping%20a%20burger%20on%20a%20grill,%20flames,%20smoke,%20dynamic%20shot,%20restaurant%20kitchen%20background" alt="Cozinha em Ação">
-                    </div>
-                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
-                        <img src="https://image.pollinations.ai/prompt/people%20enjoying%20gourmet%20burgers%20and%20drinks%20in%20a%20trendy%20restaurant,%20social%20atmosphere,%20golden%20hour%20lighting" alt="Clientes Satisfeitos">
-                    </div>
-                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
-                        <img src="https://image.pollinations.ai/prompt/stylish%20exterior%20of%20a%20gourmet%20burger%20restaurant%20at%20night,%20neon%20lights,%20modern%20architecture,%20urban%20setting" alt="Fachada Noturna">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="image-divider" style="background-image: url('https://image.pollinations.ai/prompt/selection%20of%20gourmet%20sauces%20in%20small%20bowls,%20artistic%20arrangement,%20dark%20background,%20professional%20food%20photography');" data-parallax="true"></div>
-
-        <section id="locations" class="section locations-section">
-            <div class="container">
-                <h2 class="section-title">Nossas <span>Unidades</span></h2>
-                <p class="section-subtitle">Encontre a Golden Flame mais perto de você.</p>
-                <div class="locations-grid">
-                    <div class="location-card" data-aos="fade-right">
-                        <img src="https://image.pollinations.ai/prompt/modern%20and%20luxurious%20restaurant%20exterior%20at%20night,%20warm%20lighting,%20big%20windows,%20urban%20street,%20hyperrealistic" alt="Unidade Centro">
-                        <h3>Centro Premium</h3>
-                        <p>Rua da Harmonia, 1234 - Centro</p>
-                        <p class="hours">Seg-Sex: 11h - 23h | Sáb-Dom: 12h - 00h</p>
-                        <a href="#" class="btn btn-tertiary-outline">Ver no Mapa</a>
-                    </div>
-                    <div class="location-card" data-aos="fade-up" data-aos-delay="150">
-                        <img src="https://image.pollinations.ai/prompt/trendy%20and%20inviting%20burger%20restaurant%20interior,%20golden%20lighting,%20comfortable%20booths,%20modern%20decor,%20hyperrealistic" alt="Unidade Jardins">
-                        <h3>Jardins Elegance</h3>
-                        <p>Alameda dos Sabores, 567 - Jardins</p>
-                        <p class="hours">Todos os dias: 18h - 01h</p>
-                        <a href="#" class="btn btn-tertiary-outline">Ver no Mapa</a>
-                    </div>
-                    <div class="location-card" data-aos="fade-left" data-aos-delay="300">
-                        <img src="https://image.pollinations.ai/prompt/cozy%20and%20stylish%20burger%20joint%20interior,%20warm%20lighting,%20exposed%20brick,%20artistic%20details,%20hyperrealistic" alt="Unidade Vila Nova">
-                        <h3>Vila Nova Arts</h3>
-                        <p>Av. Criatividade, 890 - Vila Nova</p>
-                        <p class="hours">Ter-Dom: 17h - 23h</p>
-                        <a href="#" class="btn btn-tertiary-outline">Ver no Mapa</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="alitech-promo-section">
-            <div class="container promo-content">
-                <div class="promo-text">
-                    <h3>🚀 Precisa de um site impactante como este?</h3>
-                    <p>A <strong>AliTech</strong> é especialista em transformar sua visão em realidade digital, criando experiências web que convertem e impressionam. Eleve sua marca!</p>
-                </div>
-                <a href="#" class="btn btn-primary-gold">Fale com a AliTech</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col footer-brand-info">
-                <a href="#" class="logo">Golden <span>Flame</span></a>
-                <p>Onde a paixão pelo hambúrguer encontra a perfeição.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#menu">Cardápio Completo</a></li>
-                    <li><a href="#gallery">Nossa Galeria</a></li>
-                    <li><a href="#story">Sobre Nós</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Atendimento</h4>
-                <ul>
-                    <li><a href="#locations">Nossas Unidades</a></li>
-                    <li><a href="#">Trabalhe Conosco</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                </ul>
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="tagline">Experiência Gastronômica Única</span>
+            <h1>O sabor que você<br>nunca esquece.</h1>
+            <p>Blends artesanais, ingredientes selecionados e o fogo que transforma cada mordida em uma obra de arte.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn btn-gold">Ver Cardápio</a>
+                <a href="#about" class="btn btn-outline">Nossa História</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Golden Flame Burgers. Todos os direitos reservados.</p>
-            <p class="developer-info">Desenvolvido com excelência por <strong>AliTech</strong>.</p>
+    </section>
+
+    <section id="menu" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="tagline">Menu Selection</span>
+                <h2 class="section-title">Obras de Arte</h2>
+            </div>
+            <div class="menu-grid" id="menu-container">
+                </div>
         </div>
-    </footer>
+    </section>
+
+    <section class="alitech-banner">
+        <div class="container">
+            <div class="alitech-content">
+                <h3>🚀 Impressionado com este visual?</h3>
+                <p>Este site foi desenvolvido pela <strong>AliTech</strong>. Criamos presença digital de alto nível para empresas que buscam o topo.</p>
+                <a href="https://wa.me/seu-numero" class="btn btn-gold">Quero um site assim</a>
+            </div>
+        </div>
+    </section>
 
     <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-header">
             <h3>Seu Pedido</h3>
-            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+            <button onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div id="cart-items" class="cart-body">
-            <p class="empty-cart-message">Seu carrinho está vazio. Adicione itens deliciosos!</p>
-        </div>
+            </div>
         <div class="cart-footer">
-            <div class="client-info-input">
-                <label for="client-name">Seu Nome:</label>
-                <input type="text" id="client-name" placeholder="Ex: João Silva">
-            </div>
-            <div class="cart-total-display">
+            <div class="cart-total">
                 <span>Total:</span>
-                <span id="cart-total-price">R$ 0,00</span>
+                <span id="total-price">R$ 0,00</span>
             </div>
-            <button class="btn btn-checkout-whatsapp" onclick="finalizeOrder()">
-                Finalizar Pedido <i class="fab fa-whatsapp"></i>
-            </button>
+            <button class="btn btn-gold w-100" onclick="sendWhatsApp()">Finalizar no WhatsApp</button>
         </div>
     </div>
-    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
 
-    <a href="https://wa.me/5500000000000" target="_blank" class="float-whatsapp-btn" aria-label="WhatsApp Golden Flame">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h2 class="logo">Golden <span>Flame</span></h2>
+                    <p>A melhor hamburgueria artesanal da região.</p>
+                </div>
+                <div class="footer-credits">
+                    <p>Site desenvolvido por <strong>AliTech</strong> — Criação de sites profissionais.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, // Duração da animação em milissegundos
-            once: true,    // Animar apenas uma vez ao rolar
-            mirror: false  // Se deve animar novamente ao rolar para cima
-        });
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
