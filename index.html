@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brasa & Burger | O Melhor Hambúrguer da Cidade</title>
-    
+    <title>Fogo & Fúria Burger | Onde a Fome Encontra o Sabor</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -16,139 +16,247 @@
 <body>
 
     <div id="loader">
-        <i class="fas fa-hamburger fa-spin"></i>
+        <div class="loader-inner">
+            <i class="fas fa-fire fa-beat"></i>
+            <p>Carregando Fúria...</p>
+        </div>
     </div>
 
-    <header id="header">
-        <div class="container header-flex">
-            <a href="#" class="logo">Brasa & <span>Burger</span></a>
-            <nav>
-                <ul class="nav-links">
+    <header id="main-header">
+        <div class="container header-wrapper">
+            <a href="#" class="logo">Fogo & Fúria <span>Burger</span></a>
+            <nav id="main-nav">
+                <ul>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#menu">Cardápio</a></li>
+                    <li><a href="#promotions">Promoções</a></li>
                     <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-bag"></i>
-                <span id="cart-count">0</span>
+            <div class="header-actions">
+                <button class="btn-primary" onclick="toggleCart()">Pedir Agora <i class="fas fa-shopping-bag"></i><span id="cart-count" class="cart-badge">0</span></button>
+            </div>
+            <div class="menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h4>Artesanal & Suculento</h4>
-            <h1>O Verdadeiro Sabor <br> do Hambúrguer</h1>
-            <p>Ingredientes selecionados, carne fresca e aquele sabor defumado que você ama.</p>
-            <a href="#menu" class="btn-primary">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </section>
-
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <h2 class="section-title">Nosso <span>Cardápio</span></h2>
-            
-            <div class="menu-filters">
-                <button class="filter-btn active">Todos</button>
-                <button class="filter-btn">Burgers</button>
-                <button class="filter-btn">Acompanhamentos</button>
-                <button class="filter-btn">Bebidas</button>
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-parallax"></div>
+            <div class="container hero-content">
+                <p class="hero-tagline">O SABOR QUE VOCÊ ESPERAVA</p>
+                <h1>O HAMBÚRGUER <br>QUE VAI MUDAR <br>SUA FOME</h1>
+                <a href="#menu" class="btn-hero-order">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
             </div>
+        </section>
 
-            <div id="menu-grid" class="menu-grid">
-                </div>
-        </div>
-    </section>
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <h2 class="section-title">Nosso <span>Cardápio</span></h2>
 
-    <section id="about" class="about-section">
-        <div class="container about-container">
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1000&auto=format&fit=crop" alt="Interior da Hamburgueria">
-            </div>
-            <div class="about-text">
-                <h3>Sobre a Brasa & Burger</h3>
-                <p>Nascemos da paixão pelo fogo e pela carne de qualidade. Desde 2018, servimos hambúrgueres feitos à mão, com blends de carnes frescas moídas diariamente e pães artesanais.</p>
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-fire"></i>
-                        <span>Feito na Brasa</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-truck"></i>
-                        <span>Entrega Rápida</span>
+                <div class="fome-level-selector">
+                    <h3>Qual o nível da sua Fúria?</h3>
+                    <div class="fome-options">
+                        <button class="fome-btn active" data-fome="pequena">Pequena</button>
+                        <button class="fome-btn" data-fome="media">Média</button>
+                        <button class="fome-btn" data-fome="monstra">Monstra</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">O que dizem os <span>Clientes</span></h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p>"Simplesmente o melhor burger da cidade! O molho especial é viciante."</p>
-                    <div class="client">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
-                        <span>João Silva</span>
+                <div class="menu-filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="burgers">Hambúrgueres</button>
+                    <button class="filter-btn" data-category="combos">Combos</button>
+                    <button class="filter-btn" data-category="sides">Acompanhamentos</button>
+                    <button class="filter-btn" data-category="drinks">Bebidas</button>
+                    <button class="filter-btn" data-category="desserts">Sobremesas</button>
+                </div>
+
+                <div id="menu-items-grid" class="menu-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="promotions" class="promotions-section">
+            <div class="container">
+                <h2 class="section-title">Ofertas da <span>Fúria</span></h2>
+                <div class="promo-grid">
+                    <div class="promo-card">
+                        <h3>Combo Fúria Dupla</h3>
+                        <p>Dois Cheddar Bacon por um preço insano!</p>
+                        <img src="https://image.pollinations.ai/prompt/two%20gourmet%20cheddar%20bacon%20burgers%20with%20crispy%20bacon%20and%20melted%20cheese,%20dark%20background,%20professional%20food%20photography,%20high%20resolution" alt="Promoção Combo Fúria Dupla">
+                        <div class="promo-info">
+                            <span class="old-price">R$ 69,90</span> <span class="new-price">R$ 49,90</span>
+                            <div class="countdown" data-time="2025-12-31T23:59:59">
+                                <i class="far fa-clock"></i> <span class="days">00</span>d <span class="hours">00</span>h <span class="minutes">00</span>m <span class="seconds">00</span>s
+                            </div>
+                        </div>
+                        <button class="btn-add-promo">Pegar Oferta</button>
+                    </div>
+                    <div class="promo-card">
+                        <h3>Fúria Família</h3>
+                        <p>4x Fúria Clássico + 2 Batatas G + Refri 2L</p>
+                        <img src="https://image.pollinations.ai/prompt/family%20meal%20pack%20with%20four%20gourmet%20burgers,%20two%20large%20fries,%20and%20a%202-liter%20soda,%20dark%20background,%20professional%20food%20photography,%20high%20resolution" alt="Promoção Fúria Família">
+                        <div class="promo-info">
+                            <span class="old-price">R$ 139,90</span> <span class="new-price">R$ 99,90</span>
+                            <div class="countdown" data-time="2025-11-15T18:00:00">
+                                <i class="far fa-clock"></i> <span class="days">00</span>d <span class="hours">00</span>h <span class="minutes">00</span>m <span class="seconds">00</span>s
+                            </div>
+                        </div>
+                        <button class="btn-add-promo">Pegar Oferta</button>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <p>"Chegou super rápido e quentinho. A batata com cheddar é divina!"</p>
-                    <div class="client">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente">
-                        <span>Maria Oliveira</span>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container about-wrapper">
+                <div class="about-image">
+                    <img src="https://image.pollinations.ai/prompt/Modern%20industrial%20kitchen%20of%20a%20burger%20restaurant,%20stainless%20steel,%20chefs%20working,%20flames,%20high%20energy,%20professional%20lighting,%20hyperrealistic" alt="Cozinha Fogo & Fúria Burger">
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title text-left">Nossa <span>História</span></h2>
+                    <p>No Fogo & Fúria Burger, acreditamos que um hambúrguer é mais do que uma refeição: é uma experiência. Nascemos da paixão por ingredientes frescos, carne de verdade e o fogo que transforma cada mordida em uma explosão de sabor. Desde 2020, temos a missão de dominar sua fome com sanduíches artesanais e o atendimento que você merece.</p>
+                    <a href="#contact" class="btn-secondary">Fale Conosco</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">O que dizem nossos <span>Clientes</span></h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p>"Simplesmente o MELHOR hambúrguer que já comi! O Fúria Dupla é surreal, e a entrega sempre impecável."</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Cliente João S.">
+                            <span>João S.</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Qualidade de ponta, do pão à carne. O site é super fácil de usar, e o sistema de fome é genial!"</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Cliente Maria P.">
+                            <span>Maria P.</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Viciada no Milkshake de Oreo! A Fogo & Fúria virou meu delivery favorito. Recomendo muito!"</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Cliente Pedro L.">
+                            <span>Pedro L.</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3>Brasa & Burger</h3>
-                <p>Rua das Flores, 123 - Centro</p>
-                <p>Aberto todos os dias: 18h às 23h</p>
+        <section id="app-loyalty" class="app-loyalty-section">
+            <div class="container app-loyalty-wrapper">
+                <div class="app-content">
+                    <h2 class="section-title text-left">Baixe nosso <span>App</span></h2>
+                    <p>Tenha toda a Fúria na palma da sua mão! Peça com mais agilidade, acesse promoções exclusivas e junte pontos no nosso Programa de Fidelidade.</p>
+                    <div class="app-buttons">
+                        <a href="#" class="store-btn"><i class="fab fa-google-play"></i> Google Play</a>
+                        <a href="#" class="store-btn"><i class="fab fa-apple"></i> App Store</a>
+                    </div>
+                </div>
+                <div class="loyalty-content">
+                    <h2 class="section-title text-left">Programa de <span>Fidelidade</span></h2>
+                    <p>A cada pedido, você acumula Fúria Pontos! Troque por descontos, produtos grátis e experiências exclusivas. Quanto mais você pede, mais vantagens você ganha!</p>
+                    <button class="btn-secondary">Saiba Mais</button>
+                </div>
             </div>
-            <div class="footer-col">
-                <div class="socials">
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col brand-info">
+                <a href="#" class="logo">Fogo & Fúria <span>Burger</span></a>
+                <p>Onde a Fome Encontra o Sabor!</p>
+                <div class="social-links">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
                 </div>
+            </div>
+            <div class="footer-col">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li>Seg - Dom: 18h - 00h</li>
+                    <li>Rua da Fúria, 666 - Centro</li>
+                    <li>(11) 98765-4321</li>
+                    <li>contato@furia.com.br</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="#menu">Cardápio</a></li>
+                    <li><a href="#promotions">Promoções</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2024 Brasa & Burger. Todos os direitos reservados.</p>
+            <p>&copy; 2024 Fogo & Fúria Burger. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <div id="cart-modal" class="cart-modal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h3>Seu Pedido</h3>
-                <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="cart-items-list" class="cart-items-list">
+            <p class="empty-cart-msg">Seu carrinho está pegando fogo de vazio! 🔥</p>
+        </div>
+        <div class="cart-footer">
+            <div class="delivery-estimate">
+                <i class="fas fa-motorcycle"></i> Tempo estimado: <span id="delivery-time">30-45 min</span>
             </div>
-            <div id="cart-items" class="cart-items">
-                <p class="empty-msg">Seu carrinho está vazio 🍔</p>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">R$ 0,00</span>
             </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span id="cart-total-price">R$ 0,00</span>
+            <button class="btn-checkout-whatsapp" onclick="finalizeOrder()">
+                Finalizar Pedido <i class="fab fa-whatsapp"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="item-customization-modal" class="customization-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-item-name"></h3>
+                <button class="close-modal" onclick="closeCustomizationModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-item-desc"></p>
+                <img id="modal-item-image" src="" alt="Produto" class="modal-item-img">
+                <div class="add-ons-section">
+                    <h4>Adicionais:</h4>
+                    <div id="add-ons-options" class="add-ons-options">
+                        </div>
                 </div>
-                <button onclick="finalizeOrder()" class="btn-checkout">
-                    Finalizar no WhatsApp <i class="fab fa-whatsapp"></i>
-                </button>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-item-price">
+                    Preço: <span id="modal-current-price">R$ 0,00</span>
+                </div>
+                <button class="btn-add-to-cart" id="modal-add-to-cart-btn">Adicionar ao Carrinho</button>
             </div>
         </div>
     </div>
 
-    <a href="https://wa.me/5511999999999" target="_blank" class="float-btn">
-        <i class="fab fa-whatsapp"></i>
+    <a href="#" class="float-order-btn" onclick="toggleCart()">
+        <i class="fas fa-fire-alt"></i> Pedir Agora
     </a>
 
     <script src="script.js"></script>
