@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasa & Burger | O Melhor Hambúrguer da Cidade</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div id="loader">
+        <i class="fas fa-hamburger fa-spin"></i>
+    </div>
+
+    <header id="header">
+        <div class="container header-flex">
+            <a href="#" class="logo">Brasa & <span>Burger</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#menu">Cardápio</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h4>Artesanal & Suculento</h4>
+            <h1>O Verdadeiro Sabor <br> do Hambúrguer</h1>
+            <p>Ingredientes selecionados, carne fresca e aquele sabor defumado que você ama.</p>
+            <a href="#menu" class="btn-primary">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Nosso <span>Cardápio</span></h2>
+            
+            <div class="menu-filters">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Burgers</button>
+                <button class="filter-btn">Acompanhamentos</button>
+                <button class="filter-btn">Bebidas</button>
+            </div>
+
+            <div id="menu-grid" class="menu-grid">
+                </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1000&auto=format&fit=crop" alt="Interior da Hamburgueria">
+            </div>
+            <div class="about-text">
+                <h3>Sobre a Brasa & Burger</h3>
+                <p>Nascemos da paixão pelo fogo e pela carne de qualidade. Desde 2018, servimos hambúrgueres feitos à mão, com blends de carnes frescas moídas diariamente e pães artesanais.</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-fire"></i>
+                        <span>Feito na Brasa</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-truck"></i>
+                        <span>Entrega Rápida</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O que dizem os <span>Clientes</span></h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Simplesmente o melhor burger da cidade! O molho especial é viciante."</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
+                        <span>João Silva</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Chegou super rápido e quentinho. A batata com cheddar é divina!"</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente">
+                        <span>Maria Oliveira</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Brasa & Burger</h3>
+                <p>Rua das Flores, 123 - Centro</p>
+                <p>Aberto todos os dias: 18h às 23h</p>
+            </div>
+            <div class="footer-col">
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Brasa & Burger. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Seu Pedido</h3>
+                <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <p class="empty-msg">Seu carrinho está vazio 🍔</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">R$ 0,00</span>
+                </div>
+                <button onclick="finalizeOrder()" class="btn-checkout">
+                    Finalizar no WhatsApp <i class="fab fa-whatsapp"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5511999999999" target="_blank" class="float-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
