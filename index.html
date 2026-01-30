@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- CSS INTEGRADO --- */
         :root {
             --gold: #D4AF37;
             --dark: #0A0A0A;
@@ -35,28 +34,27 @@
         }
 
         html { scroll-behavior: smooth; }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
 
-        /* Loader */
+        /* --- LOADER --- */
         #loader {
             position: fixed; inset: 0; background: var(--dark); z-index: 9999;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             transition: opacity 1s ease;
         }
-        .loader-logo { font-family: var(--font-h); font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .loader-logo { font-family: var(--font-h); font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; font-weight: 900; }
         .progress-container { width: 200px; height: 1px; background: #333; position: relative; }
         .progress-fill { position: absolute; left: 0; width: 0; height: 100%; background: var(--gold); animation: fill 1.5s forwards; }
         @keyframes fill { to { width: 100%; } }
 
-        /* Header */
+        /* --- HEADER --- */
         header { 
             position: fixed; width: 100%; top: 0; z-index: 1000; padding: 30px 0;
             background: linear-gradient(to bottom, rgba(10,10,10,0.9) 0%, transparent 100%);
             backdrop-filter: blur(5px);
             transition: var(--transition);
         }
-        header.scrolled { padding: 15px 0; background: rgba(10,10,10,0.95); }
+        header.scrolled { padding: 15px 0; background: rgba(10,10,10,0.95); box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
         
         nav { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: var(--font-h); font-weight: 900; font-size: 2rem; color: var(--white); text-decoration: none; }
@@ -66,97 +64,102 @@
         .nav-links a { 
             color: var(--white); text-decoration: none; font-size: 0.8rem; 
             text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+            font-weight: 600;
         }
         .nav-links a:hover { color: var(--gold); }
 
-        .cart-trigger { cursor: pointer; position: relative; font-size: 1.2rem; }
+        .cart-trigger { cursor: pointer; position: relative; font-size: 1.2rem; transition: 0.3s; }
+        .cart-trigger:hover { color: var(--gold); }
         #cart-count { 
             position: absolute; top: -10px; right: -15px; background: var(--gold); 
             color: #000; font-size: 0.7rem; width: 20px; height: 20px; 
             border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;
         }
 
-        /* Hero Section */
-        .hero { 
-            height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;
-        }
-        .hero-video-bg { 
+        /* --- HERO --- */
+        .hero { height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+        .hero-bg { 
             position: absolute; inset: 0; width: 100%; height: 100%; 
             background: url('https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
-            filter: brightness(0.3); transform: scale(1.1); transition: 10s linear;
+            filter: brightness(0.35); transform: scale(1.1); animation: slowZoom 20s infinite alternate;
         }
-        .hero:hover .hero-video-bg { transform: scale(1); }
+        @keyframes slowZoom { from { transform: scale(1.1); } to { transform: scale(1); } }
 
         .hero-content { position: relative; z-index: 2; max-width: 800px; }
         .tagline { 
             color: var(--gold); display: block; letter-spacing: 8px; 
-            text-transform: uppercase; font-size: 0.9rem; font-weight: 700; margin-bottom: 20px; 
+            text-transform: uppercase; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; 
         }
-        h1 { font-family: var(--font-h); font-size: 5rem; line-height: 1; margin-bottom: 30px; }
+        h1 { font-family: var(--font-h); font-size: 5rem; line-height: 1; margin-bottom: 30px; font-weight: 900; }
         .hero-btns { display: flex; gap: 20px; }
 
-        /* Botões */
+        /* --- BOTÕES --- */
         .btn { 
             padding: 20px 45px; border: none; font-family: var(--font-b); font-weight: 800; 
             font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; 
             cursor: pointer; transition: var(--transition); text-decoration: none; display: inline-block;
+            text-align: center;
         }
         .btn-gold { background: var(--gold); color: #000; }
         .btn-gold:hover { background: var(--white); transform: translateY(-5px); }
         .btn-outline { border: 1px solid var(--white); color: var(--white); }
         .btn-outline:hover { background: var(--white); color: #000; }
 
-        /* Menu */
+        /* --- MENU --- */
         .section { padding: 120px 0; }
         .section-title { text-align: center; margin-bottom: 80px; }
-        .section-title h2 { font-family: var(--font-h); font-size: 3.5rem; margin-bottom: 10px; }
-        .section-title p { color: var(--gray); font-weight: 300; letter-spacing: 2px; }
+        .section-title h2 { font-family: var(--font-h); font-size: 3.5rem; font-weight: 900; }
+        .section-title h2 span { color: var(--gold); }
+        .section-title p { color: var(--gray); font-weight: 300; letter-spacing: 4px; text-transform: uppercase; margin-top: 10px; font-size: 0.8rem; }
 
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        .item-card { background: var(--dark-card); transition: var(--transition); position: relative; overflow: hidden; }
-        .item-card:hover { transform: translateY(-15px); }
-        .item-img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(0.3); transition: 0.5s; }
-        .item-card:hover .item-img { filter: grayscale(0); transform: scale(1.05); }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .item-card { background: var(--dark-card); transition: var(--transition); position: relative; overflow: hidden; border: 1px solid #1a1a1a; }
+        .item-card:hover { transform: translateY(-15px); border-color: var(--gold); }
+        .item-img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(0.2); transition: 0.8s; }
+        .item-card:hover .item-img { filter: grayscale(0); transform: scale(1.08); }
         .item-body { padding: 35px; }
-        .item-body h3 { font-family: var(--font-h); font-size: 1.8rem; margin-bottom: 15px; }
-        .item-body p { color: var(--gray); font-size: 0.9rem; margin-bottom: 25px; height: 50px; }
+        .item-body h3 { font-family: var(--font-h); font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
+        .item-body p { color: var(--gray); font-size: 0.95rem; margin-bottom: 25px; height: 50px; font-weight: 300; }
         .item-foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding-top: 25px; }
         .price { font-size: 1.5rem; font-weight: 700; color: var(--gold); }
 
-        /* Unidades */
-        .units-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #222; }
-        .unit-box { height: 500px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 50px; }
-        .unit-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.5); transition: 0.5s; }
-        .unit-box:hover .unit-bg { transform: scale(1.1); filter: brightness(0.7); }
+        /* --- UNIDADES --- */
+        .units-row { display: grid; grid-template-columns: 1fr 1fr; background: #000; }
+        .unit-box { height: 550px; position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 60px; }
+        .unit-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.4); transition: 1s; }
+        .unit-box:hover .unit-bg { transform: scale(1.1); filter: brightness(0.6); }
         .unit-info { position: relative; z-index: 2; }
+        .unit-info h3 { font-family: var(--font-h); font-size: 2.5rem; margin-bottom: 10px; }
 
-        /* Carrinho Sidebar */
+        /* --- ALITECH BRANDING --- */
+        .alitech-banner { background: var(--gold); color: #000; padding: 100px 0; text-align: center; }
+        .alitech-banner h3 { font-family: var(--font-h); font-size: 3.5rem; margin-bottom: 20px; font-weight: 900; }
+        .alitech-banner p { max-width: 700px; margin: 0 auto 40px; font-weight: 600; font-size: 1.1rem; }
+
+        /* --- CARRINHO --- */
         .cart-sidebar { 
             position: fixed; right: -450px; top: 0; width: 400px; height: 100%; 
-            background: #111; z-index: 2000; transition: var(--transition); 
-            padding: 40px; display: flex; flex-direction: column;
+            background: #0f0f0f; z-index: 2000; transition: var(--transition); 
+            padding: 40px; display: flex; flex-direction: column; border-left: 1px solid var(--gold);
         }
-        .cart-sidebar.active { right: 0; box-shadow: -20px 0 50px rgba(0,0,0,0.8); }
-        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
-        .close-cart { background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
+        .cart-sidebar.active { right: 0; box-shadow: -20px 0 60px rgba(0,0,0,0.9); }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid #222; padding-bottom: 20px; }
+        .cart-header h3 { font-family: var(--font-h); font-size: 1.8rem; }
+        .close-cart { background: none; border: none; color: var(--white); font-size: 2.5rem; cursor: pointer; transition: 0.3s; }
+        .close-cart:hover { color: var(--gold); }
         .cart-items { flex: 1; overflow-y: auto; }
         .cart-footer { border-top: 1px solid #222; padding-top: 30px; }
-        .total-box { display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: 800; margin-bottom: 30px; }
+        .total-box { display: flex; justify-content: space-between; font-size: 1.6rem; font-weight: 800; margin-bottom: 30px; font-family: var(--font-h); }
 
-        /* AliTech Branding */
-        .alitech-banner { background: var(--gold); color: #000; padding: 100px 0; text-align: center; }
-        .alitech-banner h3 { font-family: var(--font-h); font-size: 3rem; margin-bottom: 20px; }
-        .alitech-banner p { max-width: 600px; margin: 0 auto 40px; font-weight: 600; }
+        footer { padding: 80px 0; text-align: center; background: #050505; }
+        .credits { margin-top: 30px; font-size: 0.75rem; color: #444; letter-spacing: 3px; font-weight: 700; }
 
-        footer { padding: 60px 0; text-align: center; border-top: 1px solid #111; }
-        .credits { margin-top: 20px; font-size: 0.8rem; color: #444; letter-spacing: 2px; }
-
-        /* Responsivo */
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
+            h1 { font-size: 3.2rem; }
             .hero-btns { flex-direction: column; }
             .cart-sidebar { width: 100%; right: -100%; }
             .units-row { grid-template-columns: 1fr; }
+            .unit-box { height: 400px; padding: 30px; }
         }
     </style>
 </head>
@@ -171,9 +174,9 @@
         <nav class="container">
             <a href="#" class="logo">Golden<span>Flame</span></a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#units">Unidades</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#units">Onde Estamos</a></li>
             </ul>
             <div class="cart-trigger" onclick="toggleCart()">
                 <i class="fa-solid fa-bag-shopping"></i>
@@ -183,13 +186,13 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="hero-video-bg"></div>
+        <div class="hero-bg"></div>
         <div class="container hero-content">
-            <span class="tagline">Hamburgueria Artesanal</span>
-            <h1>O sabor que incendeia os sentidos.</h1>
+            <span class="tagline">Tradição & Fogo</span>
+            <h1>Experiência em<br>cada mordida.</h1>
             <div class="hero-btns">
-                <a href="#menu" class="btn btn-gold">Fazer Pedido</a>
-                <a href="#units" class="btn btn-outline">Nossas Unidades</a>
+                <a href="#menu" class="btn btn-gold">Explorar Cardápio</a>
+                <a href="#units" class="btn btn-outline">Ver Unidades</a>
             </div>
         </div>
     </section>
@@ -197,8 +200,8 @@
     <section id="menu" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Nossa <span>Arte</span></h2>
-                <p>SELECIONADOS E GRELHADOS NO FOGO</p>
+                <h2>O Nosso <span>Menu</span></h2>
+                <p>Artesanal por definição</p>
             </div>
             <div class="menu-grid" id="menu-container">
                 </div>
@@ -209,35 +212,35 @@
         <div class="unit-box">
             <div class="unit-bg" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop')"></div>
             <div class="unit-info">
-                <span class="tagline">Flagship Store</span>
+                <span class="tagline">Flagship</span>
                 <h3>Vila Nova</h3>
-                <p>Rua da Tradição, 1500</p>
-                <a href="#" class="btn btn-gold" style="padding: 10px 20px; margin-top: 20px;">Como Chegar</a>
+                <p>Rua da Tradição, 1500 - São Paulo</p>
+                <a href="https://wa.me/42998633284?text=Olá!%20Gostaria%20da%20localização%20da%20Unidade%20Vila%20Nova." target="_blank" class="btn btn-gold" style="padding: 12px 25px; margin-top: 25px; font-size: 0.65rem;">Ver no Mapa</a>
             </div>
         </div>
         <div class="unit-box">
             <div class="unit-bg" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop')"></div>
             <div class="unit-info">
-                <span class="tagline">Executive Unit</span>
+                <span class="tagline">Concept</span>
                 <h3>Jardins</h3>
-                <p>Av. da Gastronomia, 45</p>
-                <a href="#" class="btn btn-gold" style="padding: 10px 20px; margin-top: 20px;">Como Chegar</a>
+                <p>Av. Paulista, 450 - CJ 10</p>
+                <a href="https://wa.me/42998633284?text=Olá!%20Gostaria%20da%20localização%20da%20Unidade%20Jardins." target="_blank" class="btn btn-gold" style="padding: 12px 25px; margin-top: 25px; font-size: 0.65rem;">Ver no Mapa</a>
             </div>
         </div>
     </section>
 
     <section class="alitech-banner">
         <div class="container">
-            <h3>Seu negócio merece esse visual.</h3>
-            <p>Este site é um protótipo de alta conversão desenvolvido pela AliTech para empresas que buscam excelência digital.</p>
-            <a href="https://wa.me/5500000000000" class="btn btn-gold" style="background: #000; color: #fff;">Falar com a AliTech</a>
+            <h3>Domine o Digital.</h3>
+            <p>Este projeto exclusivo foi desenvolvido pela AliTech. Criamos sites que posicionam marcas no topo do mercado.</p>
+            <a href="https://wa.me/42998633284?text=Olá%20AliTech!%20Vi%20o%20site%20da%20hamburgueria%20e%20quero%20um%20projeto%20premium%20assim." target="_blank" class="btn btn-gold" style="background: #000; color: #fff;">Quero um site assim</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <a href="#" class="logo">Golden<span>Flame</span></a>
-            <p class="credits">SITE DESENVOLVIDO POR ALITECH — © 2026 TODOS OS DIREITOS RESERVADOS</p>
+            <p class="credits">CRAFTED BY ALITECH — © 2026 EXCELÊNCIA DIGITAL</p>
         </div>
     </footer>
 
@@ -253,36 +256,36 @@
                 <span>Total</span>
                 <span id="cart-total">R$ 0,00</span>
             </div>
-            <button class="btn btn-gold" style="width: 100%; background: #25D366; color: white;" onclick="checkout()">Finalizar via WhatsApp</button>
+            <button class="btn btn-gold" style="width: 100%; background: #25D366; color: white;" onclick="checkout()">Finalizar no WhatsApp</button>
         </div>
     </div>
 
     <script>
         const products = [
-            { id: 1, name: "Oráculo Premium", price: 42.00, desc: "Blend Angus 180g, queijo brie maçaricado e geleia de pimenta.", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600&auto=format&fit=crop" },
-            { id: 2, name: "Flame Classic", price: 34.00, desc: "O clássico pão, carne e queijo elevado à décima potência.", img: "https://images.unsplash.com/photo-1586816001966-79b736744398?q=80&w=600&auto=format&fit=crop" },
-            { id: 3, name: "Smash Gold", price: 28.00, desc: "Prensado na brasa, cebola ultra-fina e molho secreto AliTech.", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600&auto=format&fit=crop" },
-            { id: 4, name: "Truffle Fries", price: 22.00, desc: "Batatas rústicas com azeite de trufas negras e parmesão 24 meses.", img: "https://images.unsplash.com/photo-1573010334382-02942823d525?q=80&w=600&auto=format&fit=crop" }
+            { id: 1, name: "Oráculo Tradi", price: 42.00, desc: "Blend secreto, muito cheddar e cebola caramelizada no pão brioche.", img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600&auto=format&fit=crop" },
+            { id: 2, name: "Flame Special", price: 38.00, desc: "Bacon crocante, maionese artesanal defumada e queijo prato derretido.", img: "https://images.unsplash.com/photo-1586816001966-79b736744398?q=80&w=600&auto=format&fit=crop" },
+            { id: 3, name: "Truffle Smash", price: 34.00, desc: "Dois smash burgers de 90g com azeite de trufas e rúcula fresca.", img: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600&auto=format&fit=crop" },
+            { id: 4, name: "Batata AliTech", price: 24.00, desc: "Corte rústico, sal de ervas e o segredo da casa no tempero.", img: "https://images.unsplash.com/photo-1573010334382-02942823d525?q=80&w=600&auto=format&fit=crop" }
         ];
 
         let cart = [];
 
-        // Inicialização
+        // Loader
         window.addEventListener('load', () => {
             renderMenu();
             setTimeout(() => {
                 document.getElementById('loader').style.opacity = '0';
                 setTimeout(() => document.getElementById('loader').style.display = 'none', 1000);
-            }, 1500);
+            }, 1200);
         });
 
-        // Header Scroll Effect
+        // Header Scroll
         window.addEventListener('scroll', () => {
             const header = document.getElementById('main-header');
             header.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Renderização
+        // Render Menu
         function renderMenu() {
             const container = document.getElementById('menu-container');
             container.innerHTML = products.map(p => `
@@ -293,14 +296,13 @@
                         <p>${p.desc}</p>
                         <div class="item-foot">
                             <span class="price">R$ ${p.price.toFixed(2)}</span>
-                            <button class="btn btn-gold" style="padding: 10px 20px;" onclick="addToCart(${p.id})">Adicionar</button>
+                            <button class="btn btn-gold" style="padding: 10px 20px; font-size: 0.6rem;" onclick="addToCart(${p.id})">Adicionar</button>
                         </div>
                     </div>
                 </div>
             `).join('');
         }
 
-        // Lógica de Carrinho
         function toggleCart() {
             document.getElementById('cart-sidebar').classList.toggle('active');
         }
@@ -316,22 +318,21 @@
             const container = document.getElementById('cart-items');
             const totalDisp = document.getElementById('cart-total');
             const countDisp = document.getElementById('cart-count');
-
             countDisp.innerText = cart.length;
             
             if (cart.length === 0) {
-                container.innerHTML = '<p style="text-align:center; padding: 20px; color: #444;">O carrinho está faminto...</p>';
+                container.innerHTML = '<p style="text-align:center; padding: 40px; color: #444; font-size: 0.8rem; letter-spacing: 2px;">CARRINHO VAZIO</p>';
                 totalDisp.innerText = "R$ 0,00";
                 return;
             }
 
             container.innerHTML = cart.map((item, index) => `
-                <div style="display:flex; justify-content:space-between; margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid #222;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:25px; padding-bottom:15px; border-bottom:1px solid #1a1a1a;">
                     <div>
-                        <h4 style="font-size:0.9rem;">${item.name}</h4>
-                        <span style="color:var(--gold)">R$ ${item.price.toFixed(2)}</span>
+                        <h4 style="font-size:0.85rem; letter-spacing:1px;">${item.name}</h4>
+                        <span style="color:var(--gold); font-weight:700;">R$ ${item.price.toFixed(2)}</span>
                     </div>
-                    <button onclick="remove(${index})" style="background:none; border:none; color:red; cursor:pointer;">&times;</button>
+                    <button onclick="remove(${index})" style="background:none; border:none; color:#ff4444; cursor:pointer; font-size:1.2rem;">&times;</button>
                 </div>
             `).join('');
 
@@ -345,12 +346,12 @@
         }
 
         function checkout() {
-            if (cart.length === 0) return alert("Seu carrinho está vazio!");
-            let msg = "*Pedido Golden Flame*%0A%0A";
-            cart.forEach(i => msg += `- ${i.name} (R$ ${i.price.toFixed(2)})%0A`);
+            if (cart.length === 0) return;
+            let msg = "*Novo Pedido - Golden Flame*%0A%0A";
+            cart.forEach(i => msg += `• ${i.name} (R$ ${i.price.toFixed(2)})%0A`);
             const total = cart.reduce((acc, i) => acc + i.price, 0);
-            msg += `%0A*Total: R$ ${total.toFixed(2)}*`;
-            window.open(`https://wa.me/5500000000000?text=${msg}`);
+            msg += `%0A*TOTAL: R$ ${total.toFixed(2)}*%0A%0A_Enviado via sistema AliTech_`;
+            window.open(`https://wa.me/42998633284?text=${msg}`);
         }
     </script>
 </body>
