@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Blend Burger | Experiência Gastronômica</title>
-    <meta name="description" content="O melhor hambúrguer artesanal da cidade. Site demonstrativo desenvolvido por AliTech.">
+    <title>Golden Flame Burgers | O Sabor Inesquecível</title>
+    <meta name="description" content="Experimente o melhor hambúrguer artesanal da cidade. Site profissional desenvolvido pela AliTech.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -17,18 +17,21 @@
 <body>
 
     <div id="loader">
-        <div class="spinner"></div>
-        <h2 class="loader-text">Royal Blend</h2>
+        <div class="loader-content">
+            <i class="fas fa-fire fa-beat"></i>
+            <h2 class="loader-text">Golden Flame</h2>
+        </div>
     </div>
 
-    <header id="header">
+    <header id="main-header">
         <nav class="container nav-container">
-            <a href="#" class="logo">Royal <span>Blend</span></a>
+            <a href="#" class="logo">Golden <span>Flame</span></a>
             
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
-                <li><a href="#story">História</a></li>
-                <li><a href="#menu">Menu</a></li>
+                <li><a href="#story">Nossa História</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#gallery">Galeria</a></li>
                 <li><a href="#locations">Unidades</a></li>
             </ul>
 
@@ -44,138 +47,188 @@
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="overlay"></div>
-        <div class="container hero-content">
-            <span class="subtitle">Gastronomia Artesanal</span>
-            <h1>Mais que um hambúrguer,<br>uma experiência inesquecível.</h1>
-            <p>Blends selecionados, ingredientes frescos e o toque secreto da casa.</p>
-            <a href="#menu" class="btn btn-gold">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-bg-image"></div> <div class="overlay"></div>
+            <div class="container hero-content">
+                <span class="tagline">A ARTE DA HAMBURGUERIA ARTESANAL</span>
+                <h1>O sabor que você<br>nunca esquece.</h1>
+                <p>Cada mordida, uma experiência inesquecível. Feito com paixão, servido com excelência.</p>
+                <a href="#menu" class="btn btn-primary-gold">Ver Cardápio <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </section>
 
-    <section id="story" class="section story">
-        <div class="container story-grid">
-            <div class="story-image">
-                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1000&auto=format&fit=crop" alt="Chef preparando burger">
-                <div class="story-badge">Desde 2015</div>
-            </div>
-            <div class="story-text">
-                <h2>Nascido na brasa,<br>forjado na paixão.</h2>
-                <p>O Royal Blend não é apenas uma hamburgueria. É o resultado de anos de pesquisa pelo equilíbrio perfeito entre suculência e textura.</p>
-                <p>Nossa carne é moída diariamente em nossas unidades, garantindo um frescor que você sente na primeira mordida. Sem conservantes, sem atalhos. Apenas comida de verdade.</p>
-                <div class="signature">Chef Alistair Tech</div>
-            </div>
-        </div>
-    </section>
+        <div class="image-divider" style="background-image: url('https://image.pollinations.ai/prompt/close%20up%20shot%20of%20a%20perfectly%20grilled%20burger%20patty%20on%20a%20flame%20grill,%20smoke%20and%20fire,%20bokeh%20background,%20hyperrealistic,%20professional%20food%20photography');" data-parallax="true"></div>
 
-    <section id="menu" class="section menu">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nosso Menu <span>Premium</span></h2>
-                <p>Escolha sua obra de arte comestível</p>
-            </div>
-            
-            <div id="menu-grid" class="menu-grid"></div>
-        </div>
-    </section>
-
-    <section id="locations" class="section locations">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nossas <span>Unidades</span></h2>
-                <p>Encontre a Royal Blend mais próxima de você</p>
-            </div>
-            <div class="locations-grid">
-                <div class="location-card">
-                    <h3>Jardins</h3>
-                    <p>Rua Oscar Freire, 1024</p>
-                    <p class="time">Seg-Dom: 18h - 23h</p>
-                    <button class="btn-link">Ver no Mapa</button>
+        <section id="story" class="section story-section">
+            <div class="container story-grid">
+                <div class="story-image">
+                    <img src="https://image.pollinations.ai/prompt/elegant%20interior%20of%20a%20gourmet%20burger%20restaurant,%20dim%20golden%20lighting,%20comfortable%20seating,%20marble%20tables,%20luxurious%20atmosphere,%20wide%20shot,%20hyperrealistic" alt="Interior elegante da Golden Flame">
                 </div>
-                <div class="location-card">
-                    <h3>Vila Madalena</h3>
-                    <p>Rua Aspicuelta, 300</p>
-                    <p class="time">Ter-Dom: 17h - 00h</p>
-                    <button class="btn-link">Ver no Mapa</button>
-                </div>
-                <div class="location-card">
-                    <h3>Itaim Bibi</h3>
-                    <p>Rua Joaquim Floriano, 55</p>
-                    <p class="time">Seg-Sáb: 11h - 22h</p>
-                    <button class="btn-link">Ver no Mapa</button>
+                <div class="story-content">
+                    <h2 class="section-title">Nossa <span>História</span></h2>
+                    <p>No coração da Golden Flame, bate a paixão por criar não apenas hambúrgueres, mas momentos inesquecíveis. Desde nossa fundação em 2018, nos dedicamos a aprimorar cada detalhe, da escolha dos ingredientes mais frescos ao toque final na chapa.</p>
+                    <p>Somos artesãos do sabor, buscando a perfeição em cada blend de carne, em cada molho secreto e em cada pão que abraça nossa criação. Venha descobrir a experiência que nos torna únicos.</p>
+                    <a href="#locations" class="btn btn-secondary-outline">Visite-nos</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="alitech-promo">
-        <div class="container promo-content">
-            <div class="promo-text">
-                <h3>🚀 Impressionado com este site?</h3>
-                <p>Este é um modelo de alta performance criado pela <strong>AliTech</strong>. Nós criamos a presença digital que coloca sua marca em outro nível.</p>
+        <div class="image-divider" style="background-image: url('https://image.pollinations.ai/prompt/close%20up%20shot%20of%20molten%20cheddar%20cheese%20dripping%20over%20a%20hot%20burger%20patty,%20steaming,%20dark%20moody%20background,%20hyperrealistic%20food%20photography');" data-parallax="true"></div>
+
+        <section id="menu" class="section menu-section">
+            <div class="container">
+                <h2 class="section-title">Nosso <span>Cardápio</span></h2>
+                <p class="section-subtitle">Onde o sabor encontra a excelência.</p>
+                <div id="menu-grid" class="menu-grid">
+                    </div>
             </div>
-            <a href="#" class="btn btn-outline">Fale com a AliTech</a>
-        </div>
-    </section>
+        </section>
+
+        <div class="image-divider" style="background-image: url('https://image.pollinations.ai/prompt/delicious%20golden%20crispy%20french%20fries%20in%20a%20gourmet%20bowl%20with%20condiments%20on%20a%20dark%20wooden%20table,%20cinematic%20lighting,%20hyperrealistic');" data-parallax="true"></div>
+
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <h2 class="section-title">Nossa <span>Galeria</span></h2>
+                <p class="section-subtitle">Momentos e sabores que celebramos.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-aos="fade-up">
+                        <img src="https://image.pollinations.ai/prompt/hyperrealistic%20photo%20of%20a%20gourmet%20burger%20with%20melted%20cheese%20and%20crispy%20bacon,%20dark%20background,%20studio%20lighting" alt="Burger Premium">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://image.pollinations.ai/prompt/ultra-realistic%20shot%20of%20a%20refreshing%20chocolate%20milkshake%20with%20whipped%20cream%20and%20chocolate%20shavings,%20dark%20background" alt="Milkshake Irresistível">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://image.pollinations.ai/prompt/professional%20food%20photography%20of%20gourmet%20french%20fries%20with%20rosemary%20and%20truffle%20oil,%20dark%20wooden%20table" alt="Batatas Trufadas">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://image.pollinations.ai/prompt/closeup%20of%20a%20chef%20flipping%20a%20burger%20on%20a%20grill,%20flames,%20smoke,%20dynamic%20shot,%20restaurant%20kitchen%20background" alt="Cozinha em Ação">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://image.pollinations.ai/prompt/people%20enjoying%20gourmet%20burgers%20and%20drinks%20in%20a%20trendy%20restaurant,%20social%20atmosphere,%20golden%20hour%20lighting" alt="Clientes Satisfeitos">
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                        <img src="https://image.pollinations.ai/prompt/stylish%20exterior%20of%20a%20gourmet%20burger%20restaurant%20at%20night,%20neon%20lights,%20modern%20architecture,%20urban%20setting" alt="Fachada Noturna">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="image-divider" style="background-image: url('https://image.pollinations.ai/prompt/selection%20of%20gourmet%20sauces%20in%20small%20bowls,%20artistic%20arrangement,%20dark%20background,%20professional%20food%20photography');" data-parallax="true"></div>
+
+        <section id="locations" class="section locations-section">
+            <div class="container">
+                <h2 class="section-title">Nossas <span>Unidades</span></h2>
+                <p class="section-subtitle">Encontre a Golden Flame mais perto de você.</p>
+                <div class="locations-grid">
+                    <div class="location-card" data-aos="fade-right">
+                        <img src="https://image.pollinations.ai/prompt/modern%20and%20luxurious%20restaurant%20exterior%20at%20night,%20warm%20lighting,%20big%20windows,%20urban%20street,%20hyperrealistic" alt="Unidade Centro">
+                        <h3>Centro Premium</h3>
+                        <p>Rua da Harmonia, 1234 - Centro</p>
+                        <p class="hours">Seg-Sex: 11h - 23h | Sáb-Dom: 12h - 00h</p>
+                        <a href="#" class="btn btn-tertiary-outline">Ver no Mapa</a>
+                    </div>
+                    <div class="location-card" data-aos="fade-up" data-aos-delay="150">
+                        <img src="https://image.pollinations.ai/prompt/trendy%20and%20inviting%20burger%20restaurant%20interior,%20golden%20lighting,%20comfortable%20booths,%20modern%20decor,%20hyperrealistic" alt="Unidade Jardins">
+                        <h3>Jardins Elegance</h3>
+                        <p>Alameda dos Sabores, 567 - Jardins</p>
+                        <p class="hours">Todos os dias: 18h - 01h</p>
+                        <a href="#" class="btn btn-tertiary-outline">Ver no Mapa</a>
+                    </div>
+                    <div class="location-card" data-aos="fade-left" data-aos-delay="300">
+                        <img src="https://image.pollinations.ai/prompt/cozy%20and%20stylish%20burger%20joint%20interior,%20warm%20lighting,%20exposed%20brick,%20artistic%20details,%20hyperrealistic" alt="Unidade Vila Nova">
+                        <h3>Vila Nova Arts</h3>
+                        <p>Av. Criatividade, 890 - Vila Nova</p>
+                        <p class="hours">Ter-Dom: 17h - 23h</p>
+                        <a href="#" class="btn btn-tertiary-outline">Ver no Mapa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alitech-promo-section">
+            <div class="container promo-content">
+                <div class="promo-text">
+                    <h3>🚀 Precisa de um site impactante como este?</h3>
+                    <p>A <strong>AliTech</strong> é especialista em transformar sua visão em realidade digital, criando experiências web que convertem e impressionam. Eleve sua marca!</p>
+                </div>
+                <a href="#" class="btn btn-primary-gold">Fale com a AliTech</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo">Royal <span>Blend</span></a>
-                <p>A excelência em cada detalhe.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Menu</h4>
-                <a href="#home">Início</a>
-                <a href="#menu">Cardápio</a>
-                <a href="#locations">Unidades</a>
-            </div>
-            <div class="footer-social">
-                <h4>Siga-nos</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand-info">
+                <a href="#" class="logo">Golden <span>Flame</span></a>
+                <p>Onde a paixão pelo hambúrguer encontra a perfeição.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#menu">Cardápio Completo</a></li>
+                    <li><a href="#gallery">Nossa Galeria</a></li>
+                    <li><a href="#story">Sobre Nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><a href="#locations">Nossas Unidades</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Royal Blend Burger. Todos os direitos reservados.</p>
-            <p class="developer">Site desenvolvido por <strong>AliTech</strong> — Soluções Web Profissionais.</p>
+            <p>&copy; 2024 Golden Flame Burgers. Todos os direitos reservados.</p>
+            <p class="developer-info">Desenvolvido com excelência por <strong>AliTech</strong>.</p>
         </div>
     </footer>
 
     <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-header">
             <h3>Seu Pedido</h3>
-            <button onclick="toggleCart()" class="close-cart"><i class="fas fa-times"></i></button>
+            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
         </div>
-        
-        <div class="cart-body" id="cart-items">
-            <div class="empty-cart">Seu carrinho está vazio.</div>
+        <div id="cart-items" class="cart-body">
+            <p class="empty-cart-message">Seu carrinho está vazio. Adicione itens deliciosos!</p>
         </div>
-
         <div class="cart-footer">
-            <div class="cart-input-group">
-                <label>Seu Nome:</label>
-                <input type="text" id="client-name" placeholder="Digite seu nome...">
+            <div class="client-info-input">
+                <label for="client-name">Seu Nome:</label>
+                <input type="text" id="client-name" placeholder="Ex: João Silva">
             </div>
-            <div class="cart-total">
+            <div class="cart-total-display">
                 <span>Total:</span>
-                <span id="cart-total-value">R$ 0,00</span>
+                <span id="cart-total-price">R$ 0,00</span>
             </div>
-            <button onclick="checkout()" class="btn btn-full btn-whatsapp">
+            <button class="btn btn-checkout-whatsapp" onclick="finalizeOrder()">
                 Finalizar Pedido <i class="fab fa-whatsapp"></i>
             </button>
         </div>
     </div>
-    <div id="overlay-bg" class="overlay-bg" onclick="toggleCart()"></div>
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
 
-    <a href="https://wa.me/5500000000000" target="_blank" class="float-wa">
+    <a href="https://wa.me/5500000000000" target="_blank" class="float-whatsapp-btn" aria-label="WhatsApp Golden Flame">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Duração da animação em milissegundos
+            once: true,    // Animar apenas uma vez ao rolar
+            mirror: false  // Se deve animar novamente ao rolar para cima
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
