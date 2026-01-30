@@ -3,260 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fogo & Fúria Burger | Onde a Fome Encontra o Sabor</title>
+    <title>Royal Blend Burger | Experiência Gastronômica</title>
+    <meta name="description" content="O melhor hambúrguer artesanal da cidade. Site demonstrativo desenvolvido por AliTech.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="loader">
-        <div class="loader-inner">
-            <i class="fas fa-fire fa-beat"></i>
-            <p>Carregando Fúria...</p>
-        </div>
+        <div class="spinner"></div>
+        <h2 class="loader-text">Royal Blend</h2>
     </div>
 
-    <header id="main-header">
-        <div class="container header-wrapper">
-            <a href="#" class="logo">Fogo & Fúria <span>Burger</span></a>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#menu">Cardápio</a></li>
-                    <li><a href="#promotions">Promoções</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button class="btn-primary" onclick="toggleCart()">Pedir Agora <i class="fas fa-shopping-bag"></i><span id="cart-count" class="cart-badge">0</span></button>
+    <header id="header">
+        <nav class="container nav-container">
+            <a href="#" class="logo">Royal <span>Blend</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#story">História</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#locations">Unidades</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="cart-trigger" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-            <div class="menu-toggle" id="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <main>
-        <section id="home" class="hero-section">
-            <div class="hero-parallax"></div>
-            <div class="container hero-content">
-                <p class="hero-tagline">O SABOR QUE VOCÊ ESPERAVA</p>
-                <h1>O HAMBÚRGUER <br>QUE VAI MUDAR <br>SUA FOME</h1>
-                <a href="#menu" class="btn-hero-order">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
+    <section id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="container hero-content">
+            <span class="subtitle">Gastronomia Artesanal</span>
+            <h1>Mais que um hambúrguer,<br>uma experiência inesquecível.</h1>
+            <p>Blends selecionados, ingredientes frescos e o toque secreto da casa.</p>
+            <a href="#menu" class="btn btn-gold">Ver Cardápio <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section id="story" class="section story">
+        <div class="container story-grid">
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1000&auto=format&fit=crop" alt="Chef preparando burger">
+                <div class="story-badge">Desde 2015</div>
             </div>
-        </section>
-
-        <section id="menu" class="menu-section">
-            <div class="container">
-                <h2 class="section-title">Nosso <span>Cardápio</span></h2>
-
-                <div class="fome-level-selector">
-                    <h3>Qual o nível da sua Fúria?</h3>
-                    <div class="fome-options">
-                        <button class="fome-btn active" data-fome="pequena">Pequena</button>
-                        <button class="fome-btn" data-fome="media">Média</button>
-                        <button class="fome-btn" data-fome="monstra">Monstra</button>
-                    </div>
-                </div>
-
-                <div class="menu-filters">
-                    <button class="filter-btn active" data-category="all">Todos</button>
-                    <button class="filter-btn" data-category="burgers">Hambúrgueres</button>
-                    <button class="filter-btn" data-category="combos">Combos</button>
-                    <button class="filter-btn" data-category="sides">Acompanhamentos</button>
-                    <button class="filter-btn" data-category="drinks">Bebidas</button>
-                    <button class="filter-btn" data-category="desserts">Sobremesas</button>
-                </div>
-
-                <div id="menu-items-grid" class="menu-grid">
-                    </div>
-            </div>
-        </section>
-
-        <section id="promotions" class="promotions-section">
-            <div class="container">
-                <h2 class="section-title">Ofertas da <span>Fúria</span></h2>
-                <div class="promo-grid">
-                    <div class="promo-card">
-                        <h3>Combo Fúria Dupla</h3>
-                        <p>Dois Cheddar Bacon por um preço insano!</p>
-                        <img src="https://image.pollinations.ai/prompt/two%20gourmet%20cheddar%20bacon%20burgers%20with%20crispy%20bacon%20and%20melted%20cheese,%20dark%20background,%20professional%20food%20photography,%20high%20resolution" alt="Promoção Combo Fúria Dupla">
-                        <div class="promo-info">
-                            <span class="old-price">R$ 69,90</span> <span class="new-price">R$ 49,90</span>
-                            <div class="countdown" data-time="2025-12-31T23:59:59">
-                                <i class="far fa-clock"></i> <span class="days">00</span>d <span class="hours">00</span>h <span class="minutes">00</span>m <span class="seconds">00</span>s
-                            </div>
-                        </div>
-                        <button class="btn-add-promo">Pegar Oferta</button>
-                    </div>
-                    <div class="promo-card">
-                        <h3>Fúria Família</h3>
-                        <p>4x Fúria Clássico + 2 Batatas G + Refri 2L</p>
-                        <img src="https://image.pollinations.ai/prompt/family%20meal%20pack%20with%20four%20gourmet%20burgers,%20two%20large%20fries,%20and%20a%202-liter%20soda,%20dark%20background,%20professional%20food%20photography,%20high%20resolution" alt="Promoção Fúria Família">
-                        <div class="promo-info">
-                            <span class="old-price">R$ 139,90</span> <span class="new-price">R$ 99,90</span>
-                            <div class="countdown" data-time="2025-11-15T18:00:00">
-                                <i class="far fa-clock"></i> <span class="days">00</span>d <span class="hours">00</span>h <span class="minutes">00</span>m <span class="seconds">00</span>s
-                            </div>
-                        </div>
-                        <button class="btn-add-promo">Pegar Oferta</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container about-wrapper">
-                <div class="about-image">
-                    <img src="https://image.pollinations.ai/prompt/Modern%20industrial%20kitchen%20of%20a%20burger%20restaurant,%20stainless%20steel,%20chefs%20working,%20flames,%20high%20energy,%20professional%20lighting,%20hyperrealistic" alt="Cozinha Fogo & Fúria Burger">
-                </div>
-                <div class="about-content">
-                    <h2 class="section-title text-left">Nossa <span>História</span></h2>
-                    <p>No Fogo & Fúria Burger, acreditamos que um hambúrguer é mais do que uma refeição: é uma experiência. Nascemos da paixão por ingredientes frescos, carne de verdade e o fogo que transforma cada mordida em uma explosão de sabor. Desde 2020, temos a missão de dominar sua fome com sanduíches artesanais e o atendimento que você merece.</p>
-                    <a href="#contact" class="btn-secondary">Fale Conosco</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="testimonials-section">
-            <div class="container">
-                <h2 class="section-title">O que dizem nossos <span>Clientes</span></h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <p>"Simplesmente o MELHOR hambúrguer que já comi! O Fúria Dupla é surreal, e a entrega sempre impecável."</p>
-                        <div class="client-info">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Cliente João S.">
-                            <span>João S.</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Qualidade de ponta, do pão à carne. O site é super fácil de usar, e o sistema de fome é genial!"</p>
-                        <div class="client-info">
-                            <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Cliente Maria P.">
-                            <span>Maria P.</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Viciada no Milkshake de Oreo! A Fogo & Fúria virou meu delivery favorito. Recomendo muito!"</p>
-                        <div class="client-info">
-                            <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Cliente Pedro L.">
-                            <span>Pedro L.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="app-loyalty" class="app-loyalty-section">
-            <div class="container app-loyalty-wrapper">
-                <div class="app-content">
-                    <h2 class="section-title text-left">Baixe nosso <span>App</span></h2>
-                    <p>Tenha toda a Fúria na palma da sua mão! Peça com mais agilidade, acesse promoções exclusivas e junte pontos no nosso Programa de Fidelidade.</p>
-                    <div class="app-buttons">
-                        <a href="#" class="store-btn"><i class="fab fa-google-play"></i> Google Play</a>
-                        <a href="#" class="store-btn"><i class="fab fa-apple"></i> App Store</a>
-                    </div>
-                </div>
-                <div class="loyalty-content">
-                    <h2 class="section-title text-left">Programa de <span>Fidelidade</span></h2>
-                    <p>A cada pedido, você acumula Fúria Pontos! Troque por descontos, produtos grátis e experiências exclusivas. Quanto mais você pede, mais vantagens você ganha!</p>
-                    <button class="btn-secondary">Saiba Mais</button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer id="contact">
-        <div class="container footer-grid">
-            <div class="footer-col brand-info">
-                <a href="#" class="logo">Fogo & Fúria <span>Burger</span></a>
-                <p>Onde a Fome Encontra o Sabor!</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Atendimento</h4>
-                <ul>
-                    <li>Seg - Dom: 18h - 00h</li>
-                    <li>Rua da Fúria, 666 - Centro</li>
-                    <li>(11) 98765-4321</li>
-                    <li>contato@furia.com.br</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Links Úteis</h4>
-                <ul>
-                    <li><a href="#menu">Cardápio</a></li>
-                    <li><a href="#promotions">Promoções</a></li>
-                    <li><a href="#about">Sobre Nós</a></li>
-                    <li><a href="#">Trabalhe Conosco</a></li>
-                </ul>
+            <div class="story-text">
+                <h2>Nascido na brasa,<br>forjado na paixão.</h2>
+                <p>O Royal Blend não é apenas uma hamburgueria. É o resultado de anos de pesquisa pelo equilíbrio perfeito entre suculência e textura.</p>
+                <p>Nossa carne é moída diariamente em nossas unidades, garantindo um frescor que você sente na primeira mordida. Sem conservantes, sem atalhos. Apenas comida de verdade.</p>
+                <div class="signature">Chef Alistair Tech</div>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2024 Fogo & Fúria Burger. Todos os direitos reservados.</p>
+    </section>
+
+    <section id="menu" class="section menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nosso Menu <span>Premium</span></h2>
+                <p>Escolha sua obra de arte comestível</p>
+            </div>
+            
+            <div id="menu-grid" class="menu-grid"></div>
+        </div>
+    </section>
+
+    <section id="locations" class="section locations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossas <span>Unidades</span></h2>
+                <p>Encontre a Royal Blend mais próxima de você</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3>Jardins</h3>
+                    <p>Rua Oscar Freire, 1024</p>
+                    <p class="time">Seg-Dom: 18h - 23h</p>
+                    <button class="btn-link">Ver no Mapa</button>
+                </div>
+                <div class="location-card">
+                    <h3>Vila Madalena</h3>
+                    <p>Rua Aspicuelta, 300</p>
+                    <p class="time">Ter-Dom: 17h - 00h</p>
+                    <button class="btn-link">Ver no Mapa</button>
+                </div>
+                <div class="location-card">
+                    <h3>Itaim Bibi</h3>
+                    <p>Rua Joaquim Floriano, 55</p>
+                    <p class="time">Seg-Sáb: 11h - 22h</p>
+                    <button class="btn-link">Ver no Mapa</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alitech-promo">
+        <div class="container promo-content">
+            <div class="promo-text">
+                <h3>🚀 Impressionado com este site?</h3>
+                <p>Este é um modelo de alta performance criado pela <strong>AliTech</strong>. Nós criamos a presença digital que coloca sua marca em outro nível.</p>
+            </div>
+            <a href="#" class="btn btn-outline">Fale com a AliTech</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">Royal <span>Blend</span></a>
+                <p>A excelência em cada detalhe.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <a href="#home">Início</a>
+                <a href="#menu">Cardápio</a>
+                <a href="#locations">Unidades</a>
+            </div>
+            <div class="footer-social">
+                <h4>Siga-nos</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Royal Blend Burger. Todos os direitos reservados.</p>
+            <p class="developer">Site desenvolvido por <strong>AliTech</strong> — Soluções Web Profissionais.</p>
         </div>
     </footer>
 
     <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-header">
             <h3>Seu Pedido</h3>
-            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+            <button onclick="toggleCart()" class="close-cart"><i class="fas fa-times"></i></button>
         </div>
-        <div id="cart-items-list" class="cart-items-list">
-            <p class="empty-cart-msg">Seu carrinho está pegando fogo de vazio! 🔥</p>
+        
+        <div class="cart-body" id="cart-items">
+            <div class="empty-cart">Seu carrinho está vazio.</div>
         </div>
+
         <div class="cart-footer">
-            <div class="delivery-estimate">
-                <i class="fas fa-motorcycle"></i> Tempo estimado: <span id="delivery-time">30-45 min</span>
+            <div class="cart-input-group">
+                <label>Seu Nome:</label>
+                <input type="text" id="client-name" placeholder="Digite seu nome...">
             </div>
             <div class="cart-total">
                 <span>Total:</span>
-                <span id="cart-total-price">R$ 0,00</span>
+                <span id="cart-total-value">R$ 0,00</span>
             </div>
-            <button class="btn-checkout-whatsapp" onclick="finalizeOrder()">
+            <button onclick="checkout()" class="btn btn-full btn-whatsapp">
                 Finalizar Pedido <i class="fab fa-whatsapp"></i>
             </button>
         </div>
     </div>
+    <div id="overlay-bg" class="overlay-bg" onclick="toggleCart()"></div>
 
-    <div id="item-customization-modal" class="customization-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modal-item-name"></h3>
-                <button class="close-modal" onclick="closeCustomizationModal()"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-                <p id="modal-item-desc"></p>
-                <img id="modal-item-image" src="" alt="Produto" class="modal-item-img">
-                <div class="add-ons-section">
-                    <h4>Adicionais:</h4>
-                    <div id="add-ons-options" class="add-ons-options">
-                        </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="modal-item-price">
-                    Preço: <span id="modal-current-price">R$ 0,00</span>
-                </div>
-                <button class="btn-add-to-cart" id="modal-add-to-cart-btn">Adicionar ao Carrinho</button>
-            </div>
-        </div>
-    </div>
-
-    <a href="#" class="float-order-btn" onclick="toggleCart()">
-        <i class="fas fa-fire-alt"></i> Pedir Agora
+    <a href="https://wa.me/5500000000000" target="_blank" class="float-wa">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="script.js"></script>
